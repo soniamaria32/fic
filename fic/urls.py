@@ -1,5 +1,5 @@
 """
-URL configuration for sistemacdc project.
+URL configuration for fic project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/6.1/topics/http/urls/
@@ -16,7 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from core.views import *
 
 urlpatterns = [
+    path('', inicial, name='inicial'),
+    path('autenticar/', autenticar, name='autenticar'),
+    path('perfil/', perfil, name='perfil'),
+    path('areas/', areas, name='areas'),
+    path('area_cadastro/', area_cadastro, name='area_cadastro'),
+    path('area_editar/<int:id>/', area_editar, name='area_editar'),
+    path('area_remover/<int:id>/', area_remover, name='area_remover'),
     path('admin/', admin.site.urls),
+
 ]
